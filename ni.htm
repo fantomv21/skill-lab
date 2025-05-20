@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>skill lab</title>
+  <style>
+    h1 {
+       padding:20px;
+       background-color:rgba(202, 204, 222, 0.147);
+       font-family: Arial, Helvetica, sans-serifs;
+       text-align: center;
+       color: aquamarine;
+
+}
+body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(270deg, #ff7e5f, #446449, #09044b, #000000);
+      background-size: 800% 800%;
+      animation: gradientMove 15s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    input[type="text"] {
+      text-align: center;
+    
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #444;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      color: aquamarine;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color:rgba(202, 204, 222, 0.147);
+      text-align: center;
+      padding: 30px;
+      margin: 10px;
+      border :1px,1px ,solid #ddd;
+      font-family: monospace;
+    }
+
+    li.hide {
+      display: none;
+    }
+    a { text-decoration: none; color: #0056cc; }
+    a:hover { text-decoration: underline; }
+  
+  </script>
+    
+  </style>
+</head>
+<body style="background-color:black">
+
+
+<h1>student library</h1>
+
+ 
+
+  
+
+  <center><input type="text" id="searchFiles" placeholder="Search file names..."></center>
+
+  <ul id="fileList">
+    
+    <li><a href="https://github.com/aditya-bhandari-cd23/FIRST-YEARS-ARCHIVE/tree/main/ESC/C%20Programming%20(22ES14A)" target="_blank"> computer science</a></li>
+    <li><a href="https://github.com/aditya-bhandari-cd23/FIRST-YEARS-ARCHIVE/tree/main/ESC/Mechanical%20(22ES14E)" target="_blank"> mechanicle</a></li>
+    <li><a href="https://github.com/aditya-bhandari-cd23/FIRST-YEARS-ARCHIVE/tree/main/ESC/Civil%20(22ES14B)" target="_blank"> telecommunicstions</a></li>
+    <li><a href="https://github.com/aditya-bhandari-cd23/FIRST-YEARS-ARCHIVE/tree/main/ESC/Civil%20(22ES14B)" target="_blank"> civil</a></li>
+    <li><a href="https://github.com/aditya-bhandari-cd23/FIRST-YEARS-ARCHIVE/tree/main/ESC/Civil%20(22ES14B)" target="_blank"> biotech</a></li>
+    <li><a href="https://github.com/aditya-bhandari-cd23/FIRST-YEARS-ARCHIVE/tree/main/ESC/Electrical%20(22ES14C)" target="_blank"> electrical</a></li>
+    <li><a href="https://github.com/aditya-bhandari-cd23/FIRST-YEARS-ARCHIVE/tree/main/ESC/Electronics%20(22ES14D)" target="_blank"> electronics</a></li>
+  </ul>
+
+  <script>
+    const input = document.getElementById("searchFiles");
+    const files = document.querySelectorAll("#fileList li");
+
+    input.addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      files.forEach(file => {
+        const name = file.textContent.toLowerCase();
+        file.classList.toggle("hide", !name.includes(query));
+      });
+    });
+  </script>
+</body>
+</html>
